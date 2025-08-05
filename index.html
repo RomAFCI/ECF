@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,7 +31,7 @@
       </header>
     </section>
     <main>
-      <section class="backgroundSection sectionPadding">
+      <section class="backgroundAboutMe sectionPadding">
         <div class="sectionFlex sectionPadding">
           <div class="profilPics"></div>
           <div class="containerText">
@@ -41,30 +41,49 @@
               petit, l'art, les différents univers etc... Lorem ipsum dolor, sit
               amet consectetur adipisicing elit. Molestiae rem quas quia? Cumque
               voluptatibus ipsa dolorum ea nisi tempore, deleniti accusamus
-              dolor eum amet voluptatem suscipit facere, doloremque officia cum.
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Molestiae rem quas quia? Cumque voluptatibus ipsa dolorum ea nisi
-              tempore, deleniti accusamus dolor eum amet voluptatem suscipit
-              facere, doloremque officia cum. Lorem, ipsum dolor sit amet
-              consectetur adipisicing elit. Nam eaque cum saepe deleniti, iure
-              aut temporibus
+              dolor eum amCumque voluptatibus ipsa dolorum ea nisi tempore,
+              deleniti accusamus dolor eum amet voluptatem suscipit facere,
+              doloremque officia cum. Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Nam eaque cum saepe deleniti, iure aut
+              temporibus
             </p>
           </div>
         </div>
       </section>
-      <section class="galleryFlex backgroundGallery">
-<h2 class="typoH2">Gallerie :</h2>
-<div class="gridGallery sectionPadding">
+      <section class="galleryFlex backgroundGallery sectionPadding">
+        <h2 class="typoH2" id="#gallery">Gallerie :</h2>
+        <div class="gridGallery sectionPadding">
+          <div class="pics1 pics"></div>
+          <div class="pics2 pics"></div>
+          <div class="pics3 pics"></div>
+          <div class="pics4 pics"></div>
+          <div class="pics5 pics"></div>
+          <div class="pics6 pics"></div>
+        </div>
+      </section>
+      <section class="backgroundContact sectionPadding contactFlex">
+       
 
-  <div class="pics1 pics"></div>
-  <div class="pics2 pics"></div>
-  <div class="pics3 pics"></div>
-  <div class="pics4 pics"></div>
-  <div class="pics5 pics"></div>
-  <div class="pics6 pics"></div>
-</div>
+          <h2 class="typoH2">Contacts :</h2>
+        
+        <div class="cardForm sectionPadding">
+          <form class="contactFlex typoForm" method="POST">
+            <label>Nom</label>
+            <input type="text" placeholder="Nom"/>
+            <label>Prénom</label>
+            <input type="text" placeholder="Prénom"/>
+            <label>Mail</label>
+            <input type="email" placeholder="Email"/>
+            <label>Commentaires</label>
+            <textarea placeholder="Votre message..."></textarea>
+            <input type="submit" name="Envoyez" value="Envoyez" />
+          </form>
+        </div>
       </section>
     </main>
+    <footer class="backgroundFooter sectionPadding footerFlex">
+      <p class="typoFooter">Tous droits réservés - ©Craft&Draw - 2025</p>
+    </footer>
   </body>
 </html>
 
