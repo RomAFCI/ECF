@@ -14,49 +14,50 @@
   --transition: ease 0.3s;
 }
 
-
-
 /* HEADER */
-
 
 .logo {
   background-image: url(./images/Logo.png);
   background-size: 75px;
-  background-image: no-repeat;
+  background-repeat: no-repeat;
   width: 75px;
   height: 75px;
 }
 
 .typoTitle {
-    font-family: Cherish;
-    font-size: 52px;
-    color: var(--color-white);
+  font-family: Cherish;
+  font-size: 52px;
+  color: var(--color-white);
 }
 
 .typoNav {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 18px;
-    color: var(--color-white);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  color: var(--color-white);
 }
 
-.headerFlex{
-    display: flex;
-    gap: 2em;
-    align-items: center;
-    justify-content: space-between;
+.headerFlex {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  justify-content: space-between;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .paddingHeader {
-    padding: var(--padding-l);
+  padding: var(--padding-l);
 }
 
 .backgroundHeader {
-    background-color: var(--color-blackLogo);
+  background-color: var(--color-blackLogo);
 }
 
+.menuBurger {
+    background-image: url(./images/menuBurger.png);
+    background-size: 75px;
+}
 /* MAIN */
