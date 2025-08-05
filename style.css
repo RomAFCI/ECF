@@ -1,0 +1,62 @@
+:root {
+  --color-taupe: #fdc98a;
+  --color-taupe-transparent: rgba(253, 201, 138, 0.9);
+  --color-grey: #606060;
+  --color-grey-transparent: rgb(57, 57, 57, 0.85);
+  --color-green: #c2c57e;
+  --color-white: #ffffff;
+  --color-blackLogo: #0b0b0b;
+  --padding-xs: 0.25em;
+  --padding-s: 0.5em;
+  --padding-m: 0.75em;
+  --padding-l: 10px;
+  --padding-xl: 20px;
+  --transition: ease 0.3s;
+}
+
+
+
+/* HEADER */
+
+
+.logo {
+  background-image: url(./images/Logo.png);
+  background-size: 75px;
+  background-image: no-repeat;
+  width: 75px;
+  height: 75px;
+}
+
+.typoTitle {
+    font-family: Cherish;
+    font-size: 52px;
+    color: var(--color-white);
+}
+
+.typoNav {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    color: var(--color-white);
+}
+
+.headerFlex{
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.paddingHeader {
+    padding: var(--padding-l);
+}
+
+.backgroundHeader {
+    background-color: var(--color-blackLogo);
+}
+
+/* MAIN */
