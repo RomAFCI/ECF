@@ -281,6 +281,42 @@ li {
   gap: 10px;
 }
 
+.cardFooterFlex {
+  display: flex;
+}
+
+.icon {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 45px;
+  height: 45px;
+}
+
+.icon1 {
+  background-image: url(./images/identity.png);
+}
+
+.icon2 {
+  background-image: url(./images/mobile.png);
+}
+
+.icon3 {
+  background-image: url(./images/house.png);
+}
+
+.icon4 {
+  background-image: url(./images/email.png);
+}
+
+.icon5 {
+  background-image: url(./images/instagram.png);
+}
+
+
+
+
+
 .typoForm {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--color-lightGrey);
