@@ -278,27 +278,49 @@ li {
   flex-direction: column;
   text-align: center;
   align-items: center;
-gap: 10px;
+  gap: 10px;
 }
 
 .typoForm {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--color-lightGrey);
+}
+
+.formFlex {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
 }
 
 .cardForm {
   background-color: var(--color-blackGrey);
   border-radius: 10px;
+  border: 2px solid var(--color-blackLogo);
   width: 300px;
   height: 400px;
+}
+
+.input {
+  border-radius: 10px;
+  background-color: var(--color-grey);
+  border: 2px solid var(--color-blackLogo);
+  color: var(--color-lightGrey);
+}
+
+.button {
+  color: var(--color-lightGrey);
+  cursor: pointer;
 }
 
 /* FOOTER */
 
 .footerFlex {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 
 .backgroundFooter {
@@ -323,11 +345,16 @@ gap: 10px;
 /* TABLET */
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
-  /* h1 {
+  h1 {
     display: none;
-  } */
+  }
+
   nav {
     display: none;
+  }
+
+  nav.visible {
+    display: block;
   }
 
   .gridGallery {
@@ -374,8 +401,17 @@ gap: 10px;
   h1 {
     display: none;
   }
+
   nav {
     display: none;
+  }
+
+  nav.visible {
+    display: block;
+  }
+
+  nav {
+    transition: all 0.3s ease;
   }
 
   .gridGallery {

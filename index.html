@@ -22,7 +22,7 @@
         <nav class="typoNav">
           <ul class="headerFlex">
             <li><a href="#aboutme">À propos de moi</a></li>
-            <li><a href="#gallery">Gallerie</a></li>
+            <li><a href="#gallery">Galerie</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -51,7 +51,7 @@
         </div>
       </section>
       <section class="galleryFlex backgroundGallery sectionPadding">
-        <h2 class="typoH2" id="#gallery">Gallerie :</h2>
+        <h2 class="typoH2" id="gallery">Galerie :</h2>
         <div class="gridGallery sectionPadding">
           <div class="pics1 pics"></div>
           <div class="pics2 pics"></div>
@@ -62,27 +62,59 @@
         </div>
       </section>
       <section class="backgroundContact sectionPadding contactFlex">
-       
+        <h2 class="typoH2" id="contact">Contacts :</h2>
 
-          <h2 class="typoH2">Contacts :</h2>
-        
         <div class="cardForm sectionPadding">
-          <form class="contactFlex typoForm" method="POST">
+          <form class="formFlex typoForm" method="POST">
             <label>Nom</label>
-            <input type="text" placeholder="Nom"/>
+            <input
+              class="input"
+              type="text"
+              name=""
+              placeholder="Nom"
+              required
+            />
             <label>Prénom</label>
-            <input type="text" placeholder="Prénom"/>
+            <input
+              class="input"
+              type="text"
+              name=""
+              placeholder="Prénom"
+              required
+            />
             <label>Mail</label>
-            <input type="email" placeholder="Email"/>
+            <input
+              class="input"
+              type="email"
+              name=""
+              placeholder="Email"
+              required
+            />
             <label>Commentaires</label>
-            <textarea placeholder="Votre message..."></textarea>
-            <input type="submit" name="Envoyez" value="Envoyez" />
+            <textarea
+              class="input"
+              name=""
+              placeholder="Votre message..."
+            ></textarea>
+            <input class="input button" type="submit" name="" value="Envoyez" />
           </form>
         </div>
       </section>
     </main>
     <footer class="backgroundFooter sectionPadding footerFlex">
-      <p class="typoFooter">Tous droits réservés - ©Craft&Draw - 2025</p>
+      <div>
+        <nav class="typoNav">
+          <ul class="headerFlex">
+            <li><a href="#aboutme">À propos de moi</a></li>
+            <li><a href="#gallery">Galerie</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div>
+        <p class="typoFooter">Tous droits réservés - ©Craft&Draw - 2025</p>
+      </div>
     </footer>
+    <script src="js.js"></script>
   </body>
 </html>
