@@ -1,5 +1,5 @@
 <?php
-echo "bjr";
+
 ?>
 
 
@@ -24,7 +24,7 @@ echo "bjr";
       <header class="headerFlex paddingHeader backgroundHeader">
         <div class="logo"><a href=""></a></div>
         <h1 class="typoTitle title">Craft & Draw</h1>
-        <nav class="typoNav">
+        <nav class="navHeader typoNav">
           <ul class="headerFlex">
             <li><a href="#aboutme">À propos de moi</a></li>
             <li><a href="#gallery">Galerie</a></li>
@@ -70,7 +70,7 @@ echo "bjr";
         <h2 class="typoH2" id="contact">Contacts :</h2>
         <div class="containerFooterFlex">
           <div
-            class="cardTextFlex backgroundCardContact sectionPadding typoContact"
+            class="card cardTextFlex backgroundCardContact sectionPadding typoContact"
           >
             <div class="cardFooterFlex">
               <div class="icon icon1"></div>

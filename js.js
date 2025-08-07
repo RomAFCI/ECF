@@ -1,5 +1,5 @@
 const boutonMenu = document.querySelector(".menuBurger");
-const navigation = document.querySelector("nav");
+const navigation = document.querySelector(".navHeader");
 
 boutonMenu.addEventListener("click", () => {
   navigation.classList.toggle("visible");

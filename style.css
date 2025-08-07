@@ -300,12 +300,22 @@ li {
   gap: 10px;
 }
 
+.card {
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+
 .containerFooterFlex {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  justify-content: space-between;
+
+  
   gap: 10px;
 }
 
@@ -346,7 +356,6 @@ li {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  text-align: left;
 }
 
 .cardForm {
@@ -405,11 +414,11 @@ li {
     display: none;
   }
 
-  nav {
+  .navHeader {
     display: none;
   }
 
-  nav.visible {
+  .navHeader.visible {
     display: block;
   }
 
@@ -458,15 +467,15 @@ li {
     display: none;
   }
 
-  nav {
+  .navHeader {
     display: none;
   }
 
-  nav.visible {
+  .navHeader.visible {
     display: block;
   }
 
-  nav {
+  .navHeader {
     transition: all 0.3s ease;
   }
 
