@@ -315,7 +315,6 @@ li {
   background-repeat: no-repeat;
   width: 45px;
   height: 45px;
-  
 }
 
 .icon1 {
@@ -337,10 +336,6 @@ li {
 .icon5 {
   background-image: url(./images/instagram.png);
 }
-
-
-
-
 
 .typoContact {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;

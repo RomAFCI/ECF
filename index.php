@@ -1,3 +1,8 @@
+<?php
+echo "bjr";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -64,7 +69,9 @@
       <section class="backgroundContact sectionPadding contactFlex">
         <h2 class="typoH2" id="contact">Contacts :</h2>
         <div class="containerFooterFlex">
-          <div class="cardTextFlex backgroundCardContact sectionPadding typoContact">
+          <div
+            class="cardTextFlex backgroundCardContact sectionPadding typoContact"
+          >
             <div class="cardFooterFlex">
               <div class="icon icon1"></div>
               <p>Roger DUMOULIN</p>
