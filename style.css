@@ -366,6 +366,14 @@ li {
   height: 400px;
 }
 
+.cardFormAdmin {
+  background-color: var(--color-blackGrey);
+  border-radius: 10px;
+  border: 2px solid var(--color-blackLogo);
+  width: 400px;
+  height: 225px;
+}
+
 .input {
   border-radius: 10px;
   background-color: var(--color-grey);
@@ -397,6 +405,14 @@ li {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--color-lightGrey);
 }
+
+.navFooterFlex {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* MEDIA QUERRIES */
 
