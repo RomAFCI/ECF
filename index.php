@@ -1,5 +1,4 @@
 <?php
-
 $host = 'localhost';
 $dbname = 'craft&draw';
 $user = 'root';
@@ -13,10 +12,6 @@ try {
 } catch (PDOException $e) {
     echo "Erreur de connexion : " . $e->getMessage();
 }
-
-
-
-
 ?>
 
 
@@ -161,6 +156,7 @@ try {
             <li><a href="#aboutme">À propos de moi</a></li>
             <li><a href="#gallery">Galerie</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="">Panneau Administrateur</a></li>
           </ul>
         </nav>
       </div>
