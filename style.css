@@ -273,6 +273,12 @@ li {
   background-color: var(--color-grey);
 }
 
+.backgroundCardContact {
+  background-color: var(--color-blackGrey);
+  border-radius: 10px;
+  border: solid 2px var(--color-blackLogo);
+}
+
 .contactFlex {
   display: flex;
   flex-direction: column;
@@ -283,6 +289,24 @@ li {
 
 .cardFooterFlex {
   display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+}
+
+.cardTextFlex {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.containerFooterFlex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .icon {
@@ -291,6 +315,7 @@ li {
   background-repeat: no-repeat;
   width: 45px;
   height: 45px;
+  
 }
 
 .icon1 {
@@ -317,7 +342,7 @@ li {
 
 
 
-.typoForm {
+.typoContact {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--color-lightGrey);
 }

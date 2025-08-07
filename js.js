@@ -1,17 +1,16 @@
-const boutonMenu = document.querySelector('.menuBurger');
-const navigation = document.querySelector('nav');
+const boutonMenu = document.querySelector(".menuBurger");
+const navigation = document.querySelector("nav");
 
-boutonMenu.addEventListener('click', () => {
-  navigation.classList.toggle('visible'); // Ajoute/enlève la classe "visible"
-  
-  // Change l'image du bouton selon l'état
-  if (navigation.classList.contains('visible')) {
-    boutonMenu.style.backgroundImage = 'url(./images/menuBurgerClosed.png)';
+boutonMenu.addEventListener("click", () => {
+  navigation.classList.toggle("visible");
+
+  if (navigation.classList.contains("visible")) {
+    boutonMenu.style.backgroundImage = "url(./images/menuBurgerClosed.png)";
   } else {
-    boutonMenu.style.backgroundImage = 'url(./images/menuBurger.png)';
+    boutonMenu.style.backgroundImage = "url(./images/menuBurger.png)";
   }
 });
 
-document.querySelector('.formFlex').addEventListener('submit', function(e) {
-    e.preventDefault();
+document.querySelector(".formFlex").addEventListener("submit", function (e) {
+  e.preventDefault();
 });
