@@ -10,7 +10,3 @@ boutonMenu.addEventListener("click", () => {
     boutonMenu.style.backgroundImage = "url(./images/menuBurger.png)";
   }
 });
-
-document.querySelector(".formFlex").addEventListener("submit", function (e) {
-  e.preventDefault();
-});

@@ -7,7 +7,7 @@ if (!isset($_SESSION['adminConnected'])) {
 }
 
 $host = 'localhost';
-$dbname = 'craft&draw';
+$dbname = 'craftdraw';
 $user = 'root';
 $password = '';
 

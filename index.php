@@ -1,7 +1,21 @@
 <?php
+// Affiche toutes les erreurs PHP
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Test : affiche ce qui est posté
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    echo "<pre>";
+    var_dump($_POST);
+    echo "</pre>";
+}
+?>
+
+
 
 $host = 'localhost';
-$dbname = 'craft&draw';
+$dbname = 'craftdraw';
 $user = 'root';
 $password = '';
 
@@ -11,26 +25,6 @@ try {
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
   echo "Erreur de connexion : " . $e->getMessage();
-}
-
-
-// Traitement du formulaire de contact
-if (isset($_POST['submitContact'])) {
-    $nomContact = $_POST['nomContact'];
-    $prenomContact = $_POST['prenomContact'];
-    $mailContact = $_POST['mailContact'];
-    $commentaireContact = $_POST['commentaireContact'];
-    
-    $sqlContact = "INSERT INTO `contact`(`nomContact`, `prenomContact`, `emailContact`, `commentaireContact`) 
-        VALUES (:nom, :prenom, :email, :commentaire)";
-    $stmtContact = $pdo->prepare($sqlContact);
-    $stmtContact->bindParam(':nom', $nomContact);
-    $stmtContact->bindParam(':prenom', $prenomContact);
-    $stmtContact->bindParam(':email', $mailContact);
-    $stmtContact->bindParam(':commentaire', $commentaireContact);
-    $stmtContact->execute();
-    
-    echo "<p>Votre message a été envoyé avec succès !</p>";
 }
 
 ?>
@@ -132,39 +126,20 @@ if (isset($_POST['submitContact'])) {
         </div>
         <div class="cardForm sectionPadding">
           <form class="formFlex typoContact" method="POST">
-            <label>Nom</label>
-
-            <input
-              class="input"
-              type="text"
-              name="nomContact"
-              placeholder="Nom"
-              required />
-            <label>Prénom</label>
-            <input
-              class="input"
-              type="text"
-              name="prenomContact"
-              placeholder="Prénom"
-              required />
-            <label>Mail</label>
-            <input
-              class="input"
-              type="email"
-              name="mailContact"
-              placeholder="Email"
-              required />
-            <label>Commentaires</label>
-            <textarea
-              class="input"
-              name="commentaireContact"
-              placeholder="Votre message..."></textarea>
-            <input
-              class="input button"
-              type="submit"
-              name="submitContact"
-              value="Envoyez" />
-          </form>
+    <label>Nom</label>
+    <input class="input" type="text" name="nomContact" placeholder="Nom" required />
+    
+    <label>Prénom</label>
+    <input class="input" type="text" name="prenomContact" placeholder="Prénom" required />
+    
+    <label>Mail</label>
+    <input class="input" type="email" name="emailContact" placeholder="Email" required />
+    
+    <label>Commentaires</label>
+    <textarea class="input" name="commentaireContact" placeholder="Votre message..."></textarea>
+    
+    <input class="input button" type="submit" name="submitContact" value="Envoyer" />
+</form>
         </div>
       </div>
     </section>
@@ -191,3 +166,27 @@ if (isset($_POST['submitContact'])) {
 </body>
 
 </html>
+
+<?php
+var_dump($_POST);
+
+// Traitement du formulaire de contact
+if (isset($_POST['submitContact'])) {
+    $nomContact = $_POST['nomContact'];
+    $prenomContact = $_POST['prenomContact'];
+    $emailContact = $_POST['emailContact'];
+    $commentaireContact = $_POST['commentaireContact'];
+    
+    $sqlContact = "INSERT INTO `contact`(`nomContact`, `prenomContact`, `emailContact`, `commentaireContact`) 
+        VALUES (:nom, :prenom, :email, :commentaire)";
+    $stmtContact = $pdo->prepare($sqlContact);
+    $stmtContact->bindParam(':nom', $nomContact);
+    $stmtContact->bindParam(':prenom', $prenomContact);
+    $stmtContact->bindParam(':email', $emailContact);
+    $stmtContact->bindParam(':commentaire', $commentaireContact);
+    $stmtContact->execute();
+    
+    echo "<p>Votre message a été envoyé avec succès !</p>";
+}
+
+?>
