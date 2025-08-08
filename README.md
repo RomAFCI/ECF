@@ -1,41 +1,56 @@
-# ECF
+ECF
+Présentation du projet :
 
-Présentation du projet:
+Pour ce projet d’artisan, j’ai décidé de partir sur un artisan fictif qui me ressemble, d’où la photo de profil sur le site.
+C’est un artiste qui présente ses œuvres et qui les vend.
 
-Pour le projet d'artisan j'ai décider de partir sur un artisan fictif qui me ressemble d'ou la photo de profil sur le site, c'est un artiste qui montre ces oeuvres et qui les vend.
+Il y a une présentation de l’artiste, une présentation de ses œuvres, ses coordonnées ainsi qu’un formulaire de contact pour les utilisateurs.
 
-Il y a une présentation de l'artiste, une présentation de ces oeuvres, ces coordonnées ainsi qu'un formulaire de contact pour les utilisateurs.
+J’ai pris en compte le responsive pour mobile, tablette et desktop. Cependant, je ne respecte pas encore les conditions en dessous de 500 px.
+Je dois également corriger ma galerie avec des balises <img> et des attributs alt, car c’est très important pour le SEO. En voulant aller trop vite, j’ai commis des erreurs lors du développement, notamment pour le MVC. Je m’explique…
 
-Le site n'est pas trés grand car je voulais quelque chose de fonctionnel vis à vis de la durée du projet et ne pas m'éparpiller.
+J’ai d’abord travaillé sur mon HTML (que j’ai ensuite transformé en PHP) et mon CSS. De là, j’ai lié les fichiers CSS via des balises <link> et les images via leurs URLs. Cependant, après avoir modifié mon MVC, j’ai remarqué que mes fichiers CSS et mes images n’avaient plus le même chemin d’accès dans le dossier assets. Cela a donc cassé tout le visuel. Par manque de temps, j’ai préféré travailler sur autre chose afin d’obtenir quelque chose de fonctionnel.
 
-J'ai pris en compte le responsive pour mobile tablet et desktop, cependant je ne respecte pas les condition en dessous des 500px, je dois également corriger ma gallerie avec des "<img>" et des "alt", car cela est trés important pour le SEO, en voulant aller trop vite j'ai fait des erreurs lors du développement, ainsi que pour le mvc, je m'explique...
+J’ai passé du temps sur Figma afin d’utiliser au mieux les composants.
 
-J'ai d'abord travailler sur mon html (que j'ai transformer en php) et mon css, de la j'ai lié via des link pour le css et des url pour les images. cependant aprés avoir modifier mon mvc j'ai remarqué que mon css et que mes images n'avait plus le même chemin d'accés dans le dossier asset, ça a donc tout casser en terme de visuel, encore une fois par manque de temps j'ai préférer travailler autre chose pour avoir quelque chose de fonctionnel.
+J’ai également travaillé le CSS pour avoir un design accessible, sobre et élégant.
 
-Par rapport au maquette j'ai passé pas mal de temps a travailler sur Figma pour utiliser les composant afin de pouvoir realisé mes maquette plus proprement mais le résultat final n'est pas optimisé selon moi, une fois de plus je me suis concentrer sur autre chose.
+Concernant le back-end, j’ai choisi de mettre un lien dans le footer vers un panneau d’administration. Lorsqu’on clique dessus, on arrive sur un index permettant de se connecter. Une fois connecté, on accède à l’index du panneau d’administration.
 
-Je parle de mes erreurs ici car je les comprend et je les ai vu, le projet réalisé n'est pas parfait et ne respecte peut être pas entiérement la consigne donné mais je pense quand même avoir fait quelque chose d'intéréssant.
+Pour se connecter en ADMIN :
 
-Concernant le Back j'ai choisi de mettre un lien dans le footer avec un panneau d'admin, lorsqu'on clique dessus on ouvre un nouvel index pour pouvoir se connecter, le nom de l'admin et le mot de passe à était directement insérer en BDD avec des requetes SQL sur phpmyadmin.
+Nom : Romain
 
-Pour se connecter en ADMIN le nom est "Romain" le mot de passe est "".
-Dans un premier temps il est possible de consulter les commentaires des utilisateurs
+Mot de passe : 1234
 
-J'ai évidémment fait un repo sur github pour pouvoir partager mon travail.
+Dans un premier temps, il est possible de consulter les commentaires des utilisateurs.
 
+J’ai sécurisé mon code avec bindParam, htmlspecialchars et un hash pour le mot de passe.
 
+J’ai évidemment créé un dépôt GitHub pour partager mon travail.
 
-Instructions d’installation:
+Le nom de la base de données est craftdraw.
 
-Pour l'ensemble du projet j'ai utiliser:
+Instructions d’installation :
 
--Github
--VScode
--Figma
--Xampp
--AnalyseSI
--Phpmyadmin
--HTML
--CSS
--JS
--PHP
+Pour l’ensemble du projet, j’ai utilisé :
+
+GitHub
+
+VS Code
+
+Figma
+
+XAMPP
+
+AnalyseSI
+
+phpMyAdmin
+
+HTML
+
+CSS
+
+JavaScript
+
+PHP
