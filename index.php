@@ -12,6 +12,27 @@ try {
 } catch (PDOException $e) {
   echo "Erreur de connexion : " . $e->getMessage();
 }
+
+
+// Traitement du formulaire de contact
+if (isset($_POST['submitContact'])) {
+    $nomContact = $_POST['nomContact'];
+    $prenomContact = $_POST['prenomContact'];
+    $mailContact = $_POST['mailContact'];
+    $commentaireContact = $_POST['commentaireContact'];
+    
+    $sqlContact = "INSERT INTO `contact`(`nomContact`, `prenomContact`, `emailContact`, `commentaireContact`) 
+        VALUES (:nom, :prenom, :email, :commentaire)";
+    $stmtContact = $pdo->prepare($sqlContact);
+    $stmtContact->bindParam(':nom', $nomContact);
+    $stmtContact->bindParam(':prenom', $prenomContact);
+    $stmtContact->bindParam(':email', $mailContact);
+    $stmtContact->bindParam(':commentaire', $commentaireContact);
+    $stmtContact->execute();
+    
+    echo "<p>Votre message a été envoyé avec succès !</p>";
+}
+
 ?>
 
 
@@ -116,32 +137,32 @@ try {
             <input
               class="input"
               type="text"
-              name=""
+              name="nomContact"
               placeholder="Nom"
               required />
             <label>Prénom</label>
             <input
               class="input"
               type="text"
-              name=""
+              name="prenomContact"
               placeholder="Prénom"
               required />
             <label>Mail</label>
             <input
               class="input"
               type="email"
-              name=""
+              name="mailContact"
               placeholder="Email"
               required />
             <label>Commentaires</label>
             <textarea
               class="input"
-              name=""
+              name="commentaireContact"
               placeholder="Votre message..."></textarea>
             <input
               class="input button"
               type="submit"
-              name=""
+              name="submitContact"
               value="Envoyez" />
           </form>
         </div>

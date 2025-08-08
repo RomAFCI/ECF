@@ -6,48 +6,41 @@ $user = 'root';
 $password = '';
 
 try {
-  $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
-  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-  echo "Erreur de connexion : " . $e->getMessage();
+    echo "Erreur de connexion : " . $e->getMessage();
 }
 
 $error = '';
 
-// Traitement du formulaire de connexion
 if (isset($_POST['connection'])) {
-    $nomAdmin = trim($_POST['nomAdmin']);
+    $nomAdmin = $_POST['nomAdmin'];
     $passwordAdmin = $_POST['passwordAdmin'];
-    
+
     if (!empty($nomAdmin) && !empty($passwordAdmin)) {
-        try {
-            // Requête pour récupérer l'admin
-            $stmt = $pdo->prepare("SELECT * FROM admin WHERE nomAdmin = :nomAdmin");
-            $stmt->bindParam(':nomAdmin', $nomAdmin);
-            $stmt->execute();
-            
-            $admin = $stmt->fetch(PDO::FETCH_ASSOC);
-            
-            if ($admin && $admin['passwordAdmin'] === $passwordAdmin) {
-                // Connexion réussie - démarrer la session
-                session_start();
-                $_SESSION['admin_logged'] = true;
-                $_SESSION['admin_name'] = $admin['nomAdmin'];
-                
-                // Redirection vers le panneau d'administration
-                header('Location: indexAdmin.php');
-                exit();
-            } else {
-                $error = 'Nom d\'utilisateur ou mot de passe incorrect.';
-            }
-        } catch (PDOException $e) {
-            $error = 'Erreur lors de la connexion : ' . $e->getMessage();
+        // Requête pour récupérer l'admin
+        $stmt = $pdo->prepare("SELECT * FROM admin WHERE nomAdmin = :nomAdmin");
+        $stmt->bindParam(':nomAdmin', $nomAdmin);
+        $stmt->execute();
+
+        $admin = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($admin && $admin['passwordAdmin'] === $passwordAdmin) {
+            // Connexion réussie - démarrer la session
+            session_start();
+            $_SESSION['adminConnected'];
+            $_SESSION['nomAdmin'] = $admin['nomAdmin'];
+
+            // Redirection vers le panneau d'administration
+            header('Location: indexAdmin.php');
+        } else {
+            $error = 'Nom d\'utilisateur ou mot de passe incorrect.';
         }
     } else {
         $error = 'Veuillez remplir tous les champs.';
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -75,7 +68,7 @@ if (isset($_POST['connection'])) {
             <input class="input" type="submit" name="connection" value="Se connecter">
         </form>
     </div>
-<script src="js.js"></script>
+    <script src="js.js"></script>
 </body>
 
 </html>
