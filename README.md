@@ -17,12 +17,6 @@ J’ai également travaillé le CSS pour avoir un design accessible, sobre et é
 
 Concernant le back-end, j’ai choisi de mettre un lien dans le footer vers un panneau d’administration. Lorsqu’on clique dessus, on arrive sur un index permettant de se connecter. Une fois connecté, on accède à l’index du panneau d’administration.
 
-Pour se connecter en ADMIN :
-
-Nom : Romain
-
-Mot de passe : 1234
-
 Dans un premier temps, il est possible de consulter les commentaires des utilisateurs.
 
 J’ai sécurisé mon code avec bindParam, htmlspecialchars et un hash pour le mot de passe.
@@ -31,26 +25,25 @@ J’ai évidemment créé un dépôt GitHub pour partager mon travail.
 
 Le nom de la base de données est craftdraw.
 
+
+
 Instructions d’installation :
 
 Pour l’ensemble du projet, j’ai utilisé :
 
-GitHub
+-GitHub
+-VS Code
+-Figma
+-XAMPP
+-AnalyseSI
+-phpMyAdmin
+-HTML
+-CSS
+-JavaScript
+-PHP
 
-VS Code
+Pour se connecter en ADMIN :
 
-Figma
+Nom : Romain
 
-XAMPP
-
-AnalyseSI
-
-phpMyAdmin
-
-HTML
-
-CSS
-
-JavaScript
-
-PHP
+Mot de passe : 1234
