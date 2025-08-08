@@ -413,6 +413,11 @@ li {
   justify-content: center;
 }
 
+/* ADMIN */
+
+.marginCom {
+ margin: 10px 0;
+}
 
 /* MEDIA QUERRIES */
 

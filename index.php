@@ -1,18 +1,4 @@
 <?php
-// Affiche toutes les erreurs PHP
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-// Test : affiche ce qui est posté
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    echo "<pre>";
-    var_dump($_POST);
-    echo "</pre>";
-}
-?>
-
-
 
 $host = 'localhost';
 $dbname = 'craftdraw';
@@ -27,8 +13,12 @@ try {
   echo "Erreur de connexion : " . $e->getMessage();
 }
 
-?>
 
+if (isset($_GET['page']) && $_GET['page'] == 'viewConnectAdmin') {
+  header("Location: indexConnectAdmin.php");
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -126,20 +116,20 @@ try {
         </div>
         <div class="cardForm sectionPadding">
           <form class="formFlex typoContact" method="POST">
-    <label>Nom</label>
-    <input class="input" type="text" name="nomContact" placeholder="Nom" required />
-    
-    <label>Prénom</label>
-    <input class="input" type="text" name="prenomContact" placeholder="Prénom" required />
-    
-    <label>Mail</label>
-    <input class="input" type="email" name="emailContact" placeholder="Email" required />
-    
-    <label>Commentaires</label>
-    <textarea class="input" name="commentaireContact" placeholder="Votre message..."></textarea>
-    
-    <input class="input button" type="submit" name="submitContact" value="Envoyer" />
-</form>
+            <label>Nom</label>
+            <input class="input" type="text" name="nomContact" placeholder="Nom" required />
+
+            <label>Prénom</label>
+            <input class="input" type="text" name="prenomContact" placeholder="Prénom" required />
+
+            <label>Mail</label>
+            <input class="input" type="email" name="emailContact" placeholder="Email" required />
+
+            <label>Commentaires</label>
+            <textarea class="input" name="commentaireContact" placeholder="Votre message..."></textarea>
+
+            <input class="input button" type="submit" name="submitContact" value="Envoyer" />
+          </form>
         </div>
       </div>
     </section>
@@ -159,7 +149,7 @@ try {
       <p class="typoFooter">Tous droits réservés - ©Craft&Draw - 2025</p>
     </div>
     <div class="typoFooter">
-      <a href="indexConnectAdmin.php">Panneau Administrateur</a>
+      <a href="?page=viewConnectAdmin">Panneau Administrateur</a>
     </div>
   </footer>
   <script src="js.js"></script>
@@ -168,25 +158,22 @@ try {
 </html>
 
 <?php
-var_dump($_POST);
 
-// Traitement du formulaire de contact
+//formulaire de contact
 if (isset($_POST['submitContact'])) {
-    $nomContact = $_POST['nomContact'];
-    $prenomContact = $_POST['prenomContact'];
-    $emailContact = $_POST['emailContact'];
-    $commentaireContact = $_POST['commentaireContact'];
-    
-    $sqlContact = "INSERT INTO `contact`(`nomContact`, `prenomContact`, `emailContact`, `commentaireContact`) 
+  $nomContact = $_POST['nomContact'];
+  $prenomContact = $_POST['prenomContact'];
+  $emailContact = $_POST['emailContact'];
+  $commentaireContact = $_POST['commentaireContact'];
+
+  $sqlContact = "INSERT INTO `contact`(`nomContact`, `prenomContact`, `emailContact`, `commentaireContact`) 
         VALUES (:nom, :prenom, :email, :commentaire)";
-    $stmtContact = $pdo->prepare($sqlContact);
-    $stmtContact->bindParam(':nom', $nomContact);
-    $stmtContact->bindParam(':prenom', $prenomContact);
-    $stmtContact->bindParam(':email', $emailContact);
-    $stmtContact->bindParam(':commentaire', $commentaireContact);
-    $stmtContact->execute();
-    
-    echo "<p>Votre message a été envoyé avec succès !</p>";
+  $stmtContact = $pdo->prepare($sqlContact);
+  $stmtContact->bindParam(':nom', $nomContact);
+  $stmtContact->bindParam(':prenom', $prenomContact);
+  $stmtContact->bindParam(':email', $emailContact);
+  $stmtContact->bindParam(':commentaire', $commentaireContact);
+  $stmtContact->execute();
 }
 
 ?>

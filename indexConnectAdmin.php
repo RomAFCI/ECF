@@ -1,5 +1,4 @@
 <?php
-
 $host = 'localhost';
 $dbname = 'craftdraw';
 $user = 'root';
@@ -7,39 +6,32 @@ $password = '';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
+    // Active les erreurs PDO en exception
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
 } catch (PDOException $e) {
     echo "Erreur de connexion : " . $e->getMessage();
 }
-
-$error = '';
 
 if (isset($_POST['connection'])) {
     $nomAdmin = $_POST['nomAdmin'];
     $passwordAdmin = $_POST['passwordAdmin'];
 
     if (!empty($nomAdmin) && !empty($passwordAdmin)) {
-        // Requête pour récupérer l'admin
+
         $stmt = $pdo->prepare("SELECT * FROM admin WHERE nomAdmin = :nomAdmin");
         $stmt->bindParam(':nomAdmin', $nomAdmin);
         $stmt->execute();
 
         $admin = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($admin && $admin['passwordAdmin'] === $passwordAdmin) {
-            // Connexion réussie - démarrer la session
+        if ($admin && password_verify($passwordAdmin, $admin['passwordAdmin'])) {
+
             session_start();
-            $_SESSION['adminConnected'];
+            $_SESSION['adminConnected'] = true;
             $_SESSION['nomAdmin'] = $admin['nomAdmin'];
 
-            // Redirection vers le panneau d'administration
             header('Location: indexAdmin.php');
-        } else {
-            $error = 'Nom d\'utilisateur ou mot de passe incorrect.';
         }
-    } else {
-        $error = 'Veuillez remplir tous les champs.';
     }
 }
 ?>
@@ -58,7 +50,6 @@ if (isset($_POST['connection'])) {
 
 <body class="sectionFlex sectionPadding backgroundAboutMe">
 
-
     <div class="cardFormAdmin sectionPadding">
 
         <form class="formFlex typoContact" method="POST">
@@ -68,8 +59,8 @@ if (isset($_POST['connection'])) {
             <input class="input" type="password" name="passwordAdmin" value="" placeholder="Mot de passe" required>
             <input class="input" type="submit" name="connection" value="Se connecter">
         </form>
+        <a class="typoContact sectionPadding" href="index.php">Retour sur le site</a>
     </div>
-    <script src="js.js"></script>
 </body>
 
 </html>
