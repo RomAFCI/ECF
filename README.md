@@ -13,7 +13,7 @@ J’ai d’abord travaillé sur mon HTML (que j’ai ensuite transformé en PHP)
 
 J’ai passé du temps sur Figma afin d’utiliser au mieux les composants.
 
-J’ai également travaillé le CSS pour avoir un design accessible, sobre et élégant.
+J’ai également travaillé le CSS pour avoir un design accessible, sobre et élégant. j'ai fait des overlay sur les images de la gallery, des hover, des transform + transition, j'ai utiliser une typo de google font pour le titre du site.
 
 Concernant le back-end, j’ai choisi de mettre un lien dans le footer vers un panneau d’administration. Lorsqu’on clique dessus, on arrive sur un index permettant de se connecter. Une fois connecté, on accède à l’index du panneau d’administration.
 
